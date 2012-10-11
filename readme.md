@@ -3,7 +3,7 @@ jquery.swiper.js - v1.0
 
 # Introduction
 
-This is Widget is meant to mimic the iOS swipe delete functionality.
+This Widget is meant to mimic the iOS swipe delete functionality.
 
 It is comprised of 2 files **jquery.swiper.js** and **jquery.swiper.css** (as well as the minified versions)
 
