@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <title>Swiper</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+ <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+ <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+ <!-- swiper -->
+ <script src="jquery.swiper.min.js"></script>
+ <link rel="stylesheet" href="jquery.swiper.min.css" />
+</head>
+<body>
+<div data-role="page">
+ <div data-role="header">
+  <h1>Swiper</h1>
+ </div>
+ <div data-role="content">
+  <h4>Basic Example</h4>
+  <ul id="example1" data-role="listview">
+   <li><a href="#">Item One</a></li>
+   <li><a href="#">Item Two</a></li>
+   <li><a href="#">Item Three</a></li>
+   <li><a href="#">Item Four</a></li>
+   <li><a href="#">Item Five</a></li>
+  </ul>
+ </div>
+ <script>
+  $(document).on("pageinit", function(){
+   $("#example1 li").swiper({
+    click: function(event, ui){
+     var $item = $(this);
+     $item.fadeOut("fast", function(){
+      $item.remove();
+     });
+    }
+   });
+  });
+ </script>
+ <div data-role="content">
+  <h4>Passing Multiple Arguments Example</h4>
+  <ul id="example2" data-role="listview">
+   <li><a href="#">Item One</a></li>
+   <li><a href="#">Item Two</a></li>
+   <li><a href="#">Item Three</a></li>
+   <li><a href="#">Item Four</a></li>
+   <li><a href="#">Item Five</a></li>
+  </ul>
+ </div>
+ <script>
+  $(document).on("pageinit", function(){
+   $("#example2 li").swiper({
+    icon: "delete",
+    iconpos: "right",
+    corners: false,
+    theme: "a",
+    label: "Remove",
+    swipe: function(event, ui){
+     alert("swiped!");
+    },
+    click: function(event, ui){
+     var $item = $(this);
+     $item.fadeOut("fast", function(){
+      $item.remove();
+     });
+    }
+   });
+  });
+ </script>
+ <div data-role="content">
+  <h4>Configuring through data attributes</h4>
+  <ul id="example3" data-role="listview">
+   <li data-swiper-label="Remove" data-swiper-theme="a"><a href="#">Item One</a></li>
+   <li data-swiper-label="Remove" data-swiper-theme="b"><a href="#">Item Two</a></li>
+   <li data-swiper-label="Remove" data-swiper-theme="c"><a href="#">Item Three</a></li>
+   <li data-swiper-label="Remove" data-swiper-theme="d"><a href="#">Item Four</a></li>
+   <li data-swiper-label="Remove" data-swiper-theme="e"><a href="#">Item Five</a></li>
+  </ul>
+ </div>
+ <script>
+  $(document).on("pageinit", function(){
+   $("#example3 li").swiper({
+    click: function(event, ui){
+     var $item = $(this);
+     $item.fadeOut("fast", function(){
+      $item.remove();
+     });
+    }
+   });
+  });
+ </script>
+ <div data-role="content">
+  <h4>Combining Arguments and data attributes</h4>
+  <ul id="example4" data-role="listview">
+   <li data-swiper-label="Remove" data-swiper-theme="a"><a href="#">Item One</a></li>
+   <li data-swiper-label="Remove" data-swiper-theme="b"><a href="#">Item Two</a></li>
+   <li data-swiper-label="Remove" data-swiper-theme="c"><a href="#">Item Three</a></li>
+   <li data-swiper-label="Remove" data-swiper-theme="d"><a href="#">Item Four</a></li>
+   <li data-swiper-label="Remove" data-swiper-theme="e"><a href="#">Item Five</a></li>
+  </ul>
+ </div>
+ <script>
+  $(document).on("pageinit", function(){
+   $("#example4 li").swiper({
+    direction: "left",
+    icon: "delete",
+    iconpos: "left",
+    click: function(event, ui){
+     var $item = $(this);
+     $item.fadeOut("fast", function(){
+      $item.remove();
+     });
+    }
+   });
+  });
+ </script>
+ <div data-role="content">
+  <h4>Binding events separately</h4>
+  <ul id="example5" data-role="listview">
+   <li><a href="#">Item One</a></li>
+   <li><a href="#">Item Two</a></li>
+   <li><a href="#">Item Three</a></li>
+   <li><a href="#">Item Four</a></li>
+   <li><a href="#">Item Five</a></li>
+  </ul>
+ </div>
+ <script>
+  $(document).on("pageinit", function(){
+   $("#example5 li").swiper();
+   // ....
+   $("#example5 li").on("swiperclick", function(event, ui){
+    var $item = $(this);
+    $item.fadeOut("fast", function(){
+     $item.remove();
+    });
+   });
+  });
+ </script>
+</div>
+</body>
+</html>
