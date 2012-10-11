@@ -7,7 +7,6 @@
  right: 10px;
  margin: -19px 0 0;
 }
-/* handle resetting mini as well */
 .ui-btn.ui-swiper-container .ui-swiper-btn .ui-btn-inner{ /* needed because the swiper button inherits the padding-right from .ui-btn-icon-right .ui-btn-inner on listviews */
  padding: 0.55em 11px 0.5em;
 }
