@@ -25,6 +25,8 @@
    <li><a href="#">Item Four</a></li>
    <li><a href="#">Item Five</a></li>
   </ul>
+  <br />
+  <a class="trigger" href="#" data-role="button" data-inline="true" data-theme="b">Trigger Swipe</a>
  </div>
  <script>
   $(document).on("pageinit", function(){
@@ -47,6 +49,8 @@
    <li><a href="#">Item Four</a></li>
    <li><a href="#">Item Five</a></li>
   </ul>
+  <br />
+  <a class="trigger" href="#" data-role="button" data-inline="true" data-theme="b">Trigger Swipe</a>
  </div>
  <script>
   $(document).on("pageinit", function(){
@@ -77,6 +81,8 @@
    <li data-swiper-label="Remove" data-swiper-theme="d"><a href="#">Item Four</a></li>
    <li data-swiper-label="Remove" data-swiper-theme="e"><a href="#">Item Five</a></li>
   </ul>
+  <br />
+  <a class="trigger" href="#" data-role="button" data-inline="true" data-theme="b">Trigger Swipe</a>
  </div>
  <script>
   $(document).on("pageinit", function(){
@@ -99,6 +105,8 @@
    <li data-swiper-label="Remove" data-swiper-theme="d"><a href="#">Item Four</a></li>
    <li data-swiper-label="Remove" data-swiper-theme="e"><a href="#">Item Five</a></li>
   </ul>
+  <br />
+  <a class="trigger" href="#" data-role="button" data-inline="true" data-theme="b">Trigger Swipe</a>
  </div>
  <script>
   $(document).on("pageinit", function(){
@@ -124,6 +132,8 @@
    <li><a href="#">Item Four</a></li>
    <li><a href="#">Item Five</a></li>
   </ul>
+  <br />
+  <a class="trigger" href="#" data-role="button" data-inline="true" data-theme="b">Trigger Swipe</a>
  </div>
  <script>
   $(document).on("pageinit", function(){
@@ -138,5 +148,17 @@
   });
  </script>
 </div>
+<script>
+ $(document).on("pageinit", function(){
+  $("body").on("click", "a.trigger", function(event){ // listener to trigger swipe events
+   event.preventDefault();
+   var $swiper = $(this).siblings("ul").children("li:first");
+   if($swiper.length){
+    console.log($swiper.data("swiper").options.direction, $swiper.data("swiper").options.direction);
+    $swiper.trigger("swipe" + $swiper.data("swiper").options.direction);
+   }
+  });
+ });
+</script>
 </body>
 </html>
